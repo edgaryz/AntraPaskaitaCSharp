@@ -9,27 +9,27 @@
             CheckNumber(5);
             CheckNumber(-2);
             CheckNumber(0);
-
+            Console.WriteLine("///////////////////////////////////////////");
             /*task 2*/
             Console.WriteLine(HighestValue(2, 5, 2));
             Console.WriteLine(HighestValue(2, 5, 3));
             Console.WriteLine(HighestValue(2, 2, 2));
-
+            Console.WriteLine("///////////////////////////////////////////");
             /*task 3*/
             CheckSymbol("a");
             CheckSymbol("b");
-
+            Console.WriteLine("///////////////////////////////////////////");
             /*task 4*/
             LeapYear(2020);
             LeapYear(2021);
             LeapYear(2022);
             LeapYear(2023);
             LeapYear(2024);
-
+            Console.WriteLine("///////////////////////////////////////////");
             /*task 5*/
             SymbolIsNumber('a');
             SymbolIsNumber('2');
-
+            Console.WriteLine("///////////////////////////////////////////");
             /*task 6*/
             CheckTimeInput(25, 61);
             CheckTimeInput(27, 59);
@@ -37,6 +37,20 @@
             CheckTimeInput(8, 55);
             CheckTimeInput(15, 22);
             CheckTimeInput(7, 15);
+            Console.WriteLine("///////////////////////////////////////////");
+            /*task 7*/
+            CheckNumberOfThreeDigits(5);
+            CheckNumberOfThreeDigits(111);
+            CheckNumberOfThreeDigits(99);
+            CheckNumberOfThreeDigits(100);
+            CheckNumberOfThreeDigits(1000);
+            CheckNumberOfThreeDigits(999);
+            Console.WriteLine("///////////////////////////////////////////");
+            /*task 8*/
+            CheckCharIfUpper('a');
+            CheckCharIfUpper('A');
+            CheckCharIfUpper('0');
+            CheckCharIfUpper('5');
         }
 
         /* task 1 */
@@ -111,7 +125,7 @@
         }
 
         /* task 5 */
-        public static void SymbolIsNumber(char symbol)
+        public static bool SymbolIsNumber(char symbol)
         {
             if (symbol == '0' ||
                 symbol == '1' ||
@@ -125,10 +139,12 @@
                 symbol == '9')
             {
                 Console.WriteLine("Skaičius");
+                return true;
             }
             else
             {
                 Console.WriteLine("Ne skaičius");
+                return false;
             }
         }
 
@@ -140,6 +156,27 @@
                 Console.WriteLine("Teisinga įvestis");
             }
             else { Console.WriteLine("Neteisinga įvestis"); }
+        }
+
+        /*task 7*/
+        public static void CheckNumberOfThreeDigits(int number) {
+            if (number >= 100 && number < 1000)
+            {
+                Console.WriteLine("Trijų skaitmenų skaičius");
+            } else { Console.WriteLine("Ne trijų skaitmenų skaičius"); }
+        }
+
+        /*task 8*/
+        public static void CheckCharIfUpper(char symbol) {
+            if (char.IsUpper(symbol)) {
+                Console.WriteLine("Didžioji raidė");
+            } else if(char.IsLower(symbol))
+            {
+                Console.WriteLine("Ne didžioji raidė");
+            } else if (char.IsNumber(symbol))
+            {
+                Console.WriteLine("Skaičius");
+            }
         }
     }
 }
