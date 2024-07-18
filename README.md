@@ -1,1 +1,1 @@
-funkcijos, klasės ir objektai
+funkcijos
