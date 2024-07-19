@@ -46,11 +46,35 @@
             CheckNumberOfThreeDigits(1000);
             CheckNumberOfThreeDigits(999);
             Console.WriteLine("///////////////////////////////////////////");
-            /*task 8*/
+            /*bonus task*/
             CheckCharIfUpper('a');
             CheckCharIfUpper('A');
             CheckCharIfUpper('0');
             CheckCharIfUpper('5');
+            Console.WriteLine("///////////////////////////////////////////");
+            /*task 8*/
+            Console.WriteLine(GetPerimeter(2));
+            Console.WriteLine(GetPerimeter(9));
+            Console.WriteLine(GetPerimeter(5));
+            Console.WriteLine("///////////////////////////////////////////");
+            /*task 9*/
+            Console.WriteLine(GetTriangleArea(2, 5));
+            Console.WriteLine(GetTriangleArea(9, 8));
+            Console.WriteLine(GetTriangleArea(5, 4));
+            Console.WriteLine("///////////////////////////////////////////");
+            /*task 10*/
+            Console.WriteLine(Math.Round(GetSquarePerimeter(4), 2));
+            Console.WriteLine(Math.Round(GetSquareArea(4), 2));
+            Console.WriteLine(Math.Round(GetSquarePerimeter(7), 2));
+            Console.WriteLine(Math.Round(GetSquareArea(7), 2));
+            Console.WriteLine("///////////////////////////////////////////");
+            /*task 11*/
+            Console.WriteLine(Math.Round(GetCubeVolume(4), 2));
+            Console.WriteLine(Math.Round(GetCubeVolume(9), 2));
+            Console.WriteLine("///////////////////////////////////////////");
+            /*task 12*/
+            Console.WriteLine(ConvertCelsiusToFahrenheit(25));
+            Console.WriteLine(ConvertCelsiusToFahrenheit(30));
         }
 
         /* task 1 */
@@ -110,7 +134,6 @@
         }
 
         /* task 4 */
-
         public static void LeapYear(int year)
         {
             if (year % 4 == 0)
@@ -159,24 +182,64 @@
         }
 
         /*task 7*/
-        public static void CheckNumberOfThreeDigits(int number) {
+        public static void CheckNumberOfThreeDigits(int number)
+        {
             if (number >= 100 && number < 1000)
             {
                 Console.WriteLine("Trijų skaitmenų skaičius");
-            } else { Console.WriteLine("Ne trijų skaitmenų skaičius"); }
+            }
+            else { Console.WriteLine("Ne trijų skaitmenų skaičius"); }
         }
 
-        /*task 8*/
-        public static void CheckCharIfUpper(char symbol) {
-            if (char.IsUpper(symbol)) {
+        /*bonus task*/
+        public static void CheckCharIfUpper(char symbol)
+        {
+            if (char.IsUpper(symbol))
+            {
                 Console.WriteLine("Didžioji raidė");
-            } else if(char.IsLower(symbol))
+            }
+            else if (char.IsLower(symbol))
             {
                 Console.WriteLine("Ne didžioji raidė");
-            } else if (char.IsNumber(symbol))
+            }
+            else if (char.IsNumber(symbol))
             {
                 Console.WriteLine("Skaičius");
             }
+        }
+
+        /*task 8*/
+        public static double GetPerimeter(double num)
+        {
+            return num * 4;
+        }
+
+        /*task 9*/
+        public static double GetTriangleArea(double length, double height)
+        {
+            return (length * height) * 0.5;
+        }
+
+        /*task 10*/
+        public static double GetSquarePerimeter(double radius)
+        {
+            return 2 * Math.PI * radius;
+        }
+        public static double GetSquareArea(double radius)
+        {
+            return Math.PI * Math.Pow(radius, 2);
+        }
+
+        /*task 11*/
+        public static double GetCubeVolume(double num)
+        {
+            return Math.Pow(num, 3);
+        }
+
+        /*task 12*/
+        public static double ConvertCelsiusToFahrenheit(double num)
+        {
+            return ((num * 9) / 5) + 32;
         }
     }
 }
